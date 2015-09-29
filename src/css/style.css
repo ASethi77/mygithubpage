@@ -1,0 +1,39 @@
+#top-overview, #side-bar, #main-view, #player-controls {
+  position: absolute;
+}
+
+#top-overview {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 48px;
+    border-bottom: 2px solid #999;
+    border-bottom-color: #c2262e;
+    background-color: #efefef;
+}
+
+#side-bar {
+    top: 50px;
+    left: 0px;
+    bottom: 0px;
+    width: 199px;
+    border-right: 1px solid #999;
+    background-color: #cdcdcd;
+}
+
+#main-view {
+    top: 50px;
+    left: 200px;
+    right: 0px;
+    bottom: 40px;
+    background-color: #f6f6f6;
+}
+
+#player-controls {
+    bottom: 0px;
+    height: 39px;
+    left: 200px;
+    right: 0px;
+    background-color: #cdcdcd;
+    border-top: 1px solid #999;
+}
