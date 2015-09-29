@@ -12,6 +12,16 @@
     background-color: #efefef;
 }
 
+#top-overview > #logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 10px;
+  height: 60%;
+}
+
 #side-bar {
     top: 50px;
     left: 0px;
