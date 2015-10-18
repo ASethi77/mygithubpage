@@ -1,0 +1,9 @@
+<div id="main-view">
+  <div ng-repeat="result in searchResults" ng-hide="displayedEpisodes">
+    <img ng-src="{{ result.artworkUrl100 }}" ng-click="showPodcastEpisodes(result.feedUrl)">
+    <!--<div>{{ result.feedUrl }}</div>-->
+  </div>
+  <ul ng-repeat="episode in displayedEpisodes">
+    <li ng-click="playEpisode(episode.episodeUrl)">{{ episode.episodeUrl }}</li>
+  </ul>
+</div>

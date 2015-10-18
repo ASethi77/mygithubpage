@@ -1,3 +1,8 @@
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #top-overview, #side-bar, #main-view, #player-controls {
   position: absolute;
 }
@@ -12,6 +17,11 @@
     background-color: #efefef;
 }
 
+#top-overview > #searchBox, #top-overview > button {
+  display: block;
+  float: right;
+}
+
 #top-overview > #logo {
   position: absolute;
   top: 0;
@@ -21,6 +31,7 @@
   left: 10px;
   height: 60%;
 }
+
 
 #side-bar {
     top: 50px;

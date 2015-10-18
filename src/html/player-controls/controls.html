@@ -1,0 +1,9 @@
+<div id="player-controls">
+  <!--<currentlyPlaying controls>
+    <source ng-src="{{ currentlyPlayingUrl }}" type="currentlyPlaying/mp3">
+      Your browser is stupid
+  </currentlyPlaying>-->
+<button ng-click="currentlyPlaying.paused ? currentlyPlaying.play() : currentlyPlaying.pause()">Pause</button>
+<button ng-click="currentlyPlaying.restart()">Stop</button>
+<button ng-click="currentlyPlaying.muting = !currentlyPlaying.muting">Mute</button>
+</div>

@@ -3,11 +3,15 @@
   Aakash Sethi
   Resonate
 -->
-<html>
+<html ng-app="resonate">
   <head>
     <link href="../css/style.css" rel="stylesheet"/>
+    <script src="../js/jquery-2.1.4.min.js" type="application/javascript"></script>
+    <script src="../js/angular.js" type="application/javascript"></script>
+    <script src="../js/app.js" type="application/javascript"></script>
+    <script src="../js/angular.audio.js" type="application/javascript"></script>
   </head>
-  <body>
+  <body ng-controller="optimusPrime">
     <!-- UI Components Needed:
       1) Controls Sidebar
       2) Top toolbar (profile/search/overview triggers)
@@ -19,16 +23,9 @@
         e) Podcast "creator view"
       4) Bottom Toolbar/Player controls
     -->
-    <div id="top-overview">
-      <img src="../../resources/logo_v2.svg" id="logo"></img>
-    </div>
-    <div id="side-bar"></div>
-    <div id="main-view">
-      <audio controls>
-        <source src="http://cdn.99percentinvisible.org/wp-content/uploads/180-Reefer-Madness.mp3" type="audio/mp3">
-          Your browser is stupid
-      </audio>
-    </div>
-    <div id="player-controls"></div>
+    <top-overview></top-overview>
+    <side-bar></side-bar>
+    <main-view></main-view>
+    <player-controls></player-controls>
   </body>
 </html>
