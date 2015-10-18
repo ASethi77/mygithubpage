@@ -1,6 +1,7 @@
-angular.module('resonate', ['ngAudio'])
+angular.module('resonate', ['ngAudio', 'angular-carousel'])
   .controller('masterController', function($scope, $http, ngAudio) {
       $scope.pageState = 'welcome';
+        $scope.topPodcasts = [];
         $scope.currentlyPlaying = null;
         $scope.searchResults = {};
         $scope.currentPodcast = null;
