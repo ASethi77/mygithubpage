@@ -1,6 +1,5 @@
 html {
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 #top-overview, #side-bar, #main-view, #player-controls {
@@ -48,6 +47,8 @@ html {
     right: 0px;
     bottom: 40px;
     background-color: #f6f6f6;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #player-controls {
@@ -57,4 +58,85 @@ html {
     right: 0px;
     background-color: #cdcdcd;
     border-top: 1px solid #999;
+}
+
+.btn.btn-default {
+  background-color: #f8f8f8;
+  height: 75%;
+  border-radius: 0px;
+}
+
+#searchButton, #searchBox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#searchButton {
+  right: 215px;
+  width: 100px;
+}
+
+#searchBox {
+  right: 10px;
+  width: 200px;
+}
+
+#playbackSlider {
+  position: relative;
+  top: -25%;
+  transform: translateY(-50%);
+  width: 80%;
+  margin-left: 200px;
+}
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #c2262e;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+.row.search-result-row {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-result-description {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 200px;
+}
+
+.search-result-image {
+    display: inline-block;
+    width: 90%;
+    max-width: 200px;
+    max-height: 200px;
 }

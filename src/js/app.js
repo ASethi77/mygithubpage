@@ -8,12 +8,21 @@ angular.module('resonate', ['ngAudio'])
             .success(function(data) {
               $scope.displayedEpisodes = null;
               $scope.searchResults = data.results;
+              function chunk(arr, size) {
+                var newArr = [];
+                for (var i=0; i<arr.length; i+=size) {
+                  newArr.push(arr.slice(i, i+size));
+                }
+                return newArr;
+              }
+              $scope.chunkedData = chunk($scope.searchResults, 4);
             })
         }
         $scope.showPodcastEpisodes = function(rssFeedUrl) {
           $scope.displayedEpisodes = [];
           console.log(rssFeedUrl);
-          $.get(rssFeedUrl, function(data) {
+          $.get(rssFeedUrl + ".xml?format=xml", function(data) {
+            console.log(data);
             var $XML = $(data);
             $XML.find("item").each(function() {
               var $this = $(this),
@@ -36,6 +45,7 @@ angular.module('resonate', ['ngAudio'])
         $scope.currentlyPlaying = null;
         $scope.currentlyPlaying = ngAudio.load(url);
         $scope.currentlyPlaying.play();
+        document.getElementById('playbackSlider').disabled = false;
       }
   })
 

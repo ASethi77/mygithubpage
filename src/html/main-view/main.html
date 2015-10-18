@@ -1,9 +1,16 @@
 <div id="main-view">
-  <div ng-repeat="result in searchResults" ng-hide="displayedEpisodes">
-    <img ng-src="{{ result.artworkUrl100 }}" ng-click="showPodcastEpisodes(result.feedUrl)">
+  <div class="row search-result-row" ng-repeat="rows in chunkedData" ng-hide="displayedEpisodes">
+    <div class="col-md-3" ng-repeat="item in rows">
+      <div class="search-result">
+        <img class="search-result-image" ng-src="{{ item.artworkUrl600 }}" ng-click="showPodcastEpisodes(item.feedUrl)">
+        <div class="search-result-description">
+            {{ item.collectionName }}
+        </div>
+      </div>
+    </div>
     <!--<div>{{ result.feedUrl }}</div>-->
   </div>
   <ul ng-repeat="episode in displayedEpisodes">
-    <li ng-click="playEpisode(episode.episodeUrl)">{{ episode.episodeUrl }}</li>
+    <li ng-click="playEpisode(episode.episodeUrl)">{{ episode.title }}</li>
   </ul>
 </div>
