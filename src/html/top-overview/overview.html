@@ -1,5 +1,19 @@
 <div id="top-overview">
     <img src="../../resources/logo_v2.svg" id="logo"></img>
-    <input class="form-control pull-right" id="searchBox" type="text" ng-model="searchTerm"></input>
-    <button class="btn btn-default btn-outline" id="searchButton" ng-click="searchPodcasts(searchTerm)">Search</button>
+    <div class="pull-right">
+      <form ng-submit="searchPodcasts(searchTerm)" class="search-form">
+          <div class="form-group has-feedback">
+          <label for="search" class="sr-only">Search</label>
+          <input type="text" autocomplete="off" ng-model="searchTerm" class="form-control" name="search" id="search" placeholder="Search for podcasts">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+  </div>
+    <div id="menu" class="pull-right">
+      <div style="border-bottom: 3px #166BA7 solid">My Podcasts</div>
+      <div>Discover</div>
+      <div>Share</div>
+    </div>
+    <!--<input class="form-control pull-right" id="searchBox" type="text" ng-model="searchTerm"></input>
+    <button class="btn btn-default btn-outline" id="searchButton" ng-click="searchPodcasts(searchTerm)">Search</button>-->
 </div>

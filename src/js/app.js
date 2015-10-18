@@ -1,9 +1,12 @@
 angular.module('resonate', ['ngAudio'])
-  .controller('optimusPrime', function($scope, $http, $timeout, ngAudio) {
+  .controller('masterController', function($scope, $http, $timeout, ngAudio) {
+      $scope.pageState = 'welcome';
         $scope.currentlyPlaying = null;
         $scope.searchResults = {};
+        $scope.currentPodcast = null;
         $scope.displayedEpisodes = [];
         $scope.searchPodcasts = function(searchTerm) {
+          $scope.currentPodcast = null;
           $http.get("https://itunes.apple.com/search?term=" + searchTerm + "&entity=podcast")
             .success(function(data) {
               $scope.displayedEpisodes = null;
@@ -16,13 +19,13 @@ angular.module('resonate', ['ngAudio'])
                 return newArr;
               }
               $scope.chunkedData = chunk($scope.searchResults, 4);
+              $scope.pageState = 'search-results';
             })
         }
-        $scope.showPodcastEpisodes = function(rssFeedUrl) {
+        $scope.showPodcastEpisodes = function(item) {
+          $scope.currentPodcast = item;
           $scope.displayedEpisodes = [];
-          console.log(rssFeedUrl);
-          $.get(rssFeedUrl + ".xml?format=xml", function(data) {
-            console.log(data);
+          $.get(item.feedUrl + ".xml?format=xml", function(data) {
             var $XML = $(data);
             $XML.find("item").each(function() {
               var $this = $(this),
@@ -31,12 +34,13 @@ angular.module('resonate', ['ngAudio'])
                 title:       $this.find("title").text(),
                 link:        $this.find("link").text(),
                 description: $this.find("description").text(),
+                duration:    $this.find("itunes\\:duration, duration").text(),
                 pubDate:     $this.find("pubDate").text(),
                 author:      $this.find("author").text()
               };
               $scope.displayedEpisodes.push(item);
             })
-            $scope.searchResults = null;
+            $scope.pageState = 'episode-list';
             $scope.$digest();
         })
       }

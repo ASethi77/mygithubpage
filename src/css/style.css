@@ -42,11 +42,11 @@ html {
 }
 
 #main-view {
+    background-color: #f6f6f6;
     top: 50px;
-    left: 200px;
+    left: 0px;
     right: 0px;
     bottom: 40px;
-    background-color: #f6f6f6;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -54,7 +54,7 @@ html {
 #player-controls {
     bottom: 0px;
     height: 39px;
-    left: 200px;
+    left: 0px;
     right: 0px;
     background-color: #cdcdcd;
     border-top: 1px solid #999;
@@ -91,6 +91,7 @@ html {
   width: 80%;
   margin-left: 200px;
 }
+
 input[type=range]{
     -webkit-appearance: none;
 }
@@ -126,7 +127,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   margin-bottom: 20px;
 }
 
-.search-result-description {
+.search-result-name {
+  font-weight: bold;
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
@@ -135,8 +137,145 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 .search-result-image {
-    display: inline-block;
-    width: 90%;
-    max-width: 200px;
-    max-height: 200px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  display: inline-block;
+  width: 90%;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.search-result-image:hover {
+  -webkit-filter: brightness(110%);
+  filter: brightness(110%);
+}
+
+.search-result-image:not(:hover) {
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+}
+
+.row.main-info {
+  margin-bottom: 20px;
+  background-color: #1e1e1e;
+}
+.row.main-info > span {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+.row.main-info > span > img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.podcast-drilldown > ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.podcast-drilldown > ul > li {
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  line-height: 40px;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #cbcbcb;
+  border-left: 4px solid #c2262e;
+}
+
+.podcast-drilldown > ul > li:hover {
+  background-color: #eee;
+}
+
+.title-text {
+  font-weight: bold;
+}
+
+.episode-description {
+  line-height: 1.7em;
+  margin-bottom: 5px;
+}
+
+.play-button, .episode-title, .episode-duration {
+  display: inline-block;
+}
+
+.play-button {
+  cursor: pointer; curosr; hand;
+  transition: all linear 0.5s;
+}
+
+.play-button .glyphicon:hover {
+  color: #757575;
+}
+
+#welcome-pane h1, #welcome-pane h2 {
+  text-align: center;
+}
+
+
+.search-form .form-group {
+  margin-top: 6px;
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #a0a0a0;
+  left: initial;
+  font-size: 14px;
+}
+
+#menu div {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 45px;
 }
