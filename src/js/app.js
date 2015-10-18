@@ -55,25 +55,25 @@ angular.module('resonate', ['ngAudio'])
 
   .directive('topOverview', function() {
     return {
-      templateUrl: "top-overview/overview.html",
+      templateUrl: "src/html/top-overview/overview.html",
       restrict: 'E',
     }
   })
   .directive('sideBar', function() {
     return {
-      templateUrl: "side-bar/sidebar.html",
+      templateUrl: "src/html/side-bar/sidebar.html",
       restrict: 'E'
     }
   })
   .directive('mainView', function() {
     return {
-      templateUrl: "main-view/main.html",
+      templateUrl: "src/html/main-view/main.html",
       restrict: 'E'
     }
   })
   .directive('playerControls', function() {
     return {
-      templateUrl: "player-controls/controls.html",
+      templateUrl: "src/html/player-controls/controls.html",
       restrict: 'E'
     }
   })
