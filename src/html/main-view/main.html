@@ -1,7 +1,7 @@
 <div id="main-view">
   <div id="welcome-pane" class="jumbotron" ng-show="pageState == 'welcome'">
   <h1>Welcome to Resonate.</h1>
-  <h2>Discover. Create. Listen.</h2>
+  <h2>Learn. Discover. Listen.</h2>
 </div>
   <div id="search-results-pane" ng-show="pageState == 'search-results'">
   <div class="row search-result-row" ng-repeat="rows in chunkedData">
@@ -20,7 +20,7 @@
     <span class="text-center"><img ng-src="{{ currentPodcast.artworkUrl600 }}"></span>
   </div>
   <ul>
-    <li ng-repeat="episode in displayedEpisodes" ng-click="showDescription = !showDescription">
+    <li ng-repeat="episode in displayedEpisodes" ng-class="{ 'focused-episode': showDescription }" ng-click="showDescription = !showDescription">
       <div class="episode-overview">
       <div class="play-button">
         <span class="glyphicon glyphicon-play-circle" ng-click="playEpisode(episode.episodeUrl)">&nbsp;</span>

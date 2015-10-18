@@ -1,3 +1,7 @@
+.jumbotron {
+  background-color: rgba(246, 246, 246, 0.7);
+}
+
 html {
   overflow-x: hidden;
 }
@@ -42,7 +46,12 @@ html {
 }
 
 #main-view {
-    background-color: #f6f6f6;
+  background-image: url('../../resources/logo_transp.svg');
+background-attachment: scroll;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: -20px 0px;
+background-color: rgba(246, 246, 246, 0);
     top: 50px;
     left: 0px;
     right: 0px;
@@ -179,18 +188,21 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .podcast-drilldown > ul > li {
   min-height: 40px;
-  margin-bottom: 10px;
   padding-left: 20px;
   line-height: 40px;
-  background-color: #f6f6f6;
+  background-color: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid #cbcbcb;
   border-left: 4px solid #c2262e;
 }
 
 .podcast-drilldown > ul > li:hover {
+  border-left: 4px solid #91080F;
   background-color: #eee;
 }
-
+.podcast-drilldown > ul > li.focused-episode {
+  border-left: 4px solid #91080F;
+  background-color: #eee;
+}
 .title-text {
   font-weight: bold;
 }
@@ -213,10 +225,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   color: #757575;
 }
 
+.episode-duration {
+  margin-right: 20px;
+}
+
 #welcome-pane h1, #welcome-pane h2 {
   text-align: center;
 }
-
 
 .search-form .form-group {
   margin-top: 6px;

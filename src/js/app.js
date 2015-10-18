@@ -1,5 +1,5 @@
 angular.module('resonate', ['ngAudio'])
-  .controller('masterController', function($scope, $http, $timeout, ngAudio) {
+  .controller('masterController', function($scope, $http, ngAudio) {
       $scope.pageState = 'welcome';
         $scope.currentlyPlaying = null;
         $scope.searchResults = {};
@@ -25,7 +25,7 @@ angular.module('resonate', ['ngAudio'])
         $scope.showPodcastEpisodes = function(item) {
           $scope.currentPodcast = item;
           $scope.displayedEpisodes = [];
-          $.get(item.feedUrl + ".xml?format=xml", function(data) {
+          $.get(item.feedUrl + "?format=xml", function(data) {
             var $XML = $(data);
             $XML.find("item").each(function() {
               var $this = $(this),
